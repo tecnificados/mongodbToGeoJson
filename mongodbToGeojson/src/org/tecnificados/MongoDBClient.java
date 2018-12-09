@@ -138,7 +138,11 @@ public class MongoDBClient {
 			}
 			
 			try {
-				FileUtils.writeStringToFile(new File(OUTPUT_FOLDER+File.separator+m.getIdPais()+File.separator+m.getNombreNormalizado()+".json"), jsonInString, "UTF-8");
+				String fileName=m.getNombreNormalizado();
+				if (fileName.contains("/"))
+					fileName=fileName.replace("/"," - ");
+				
+				FileUtils.writeStringToFile(new File(OUTPUT_FOLDER+File.separator+m.getIdPais()+File.separator+fileName+".json"), jsonInString, "UTF-8");
 			} catch (IOException e) {
 				log.error("Error writting file",e);
 			}
