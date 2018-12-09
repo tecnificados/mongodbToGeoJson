@@ -1,0 +1,5 @@
+.metadata/
+mongodbToGeojson/.settings/
+RemoteSystemsTempFiles/
+mongodbToGeojson/.project
+mongodbToGeojson/.classpath
